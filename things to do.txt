@@ -1,0 +1,24 @@
+shaders coursework:
+-research/explain principles of Full Phong shading
+-design, write, test a c++/GLSL program to implement full phong shading
+-write a report on everything
+
+
+
+tasks to be done:
+-create a shader program, that renders teapot with ambient, difusse and specular lighting.
+-Phong shading is calculated by combining different forms of light to create the overall lighting for a model. 
+This light is calculated by combining ambient, diffuse and specular.
+
+-modify the per pixel diffuse shader code to produce a program that displays 
+a 3D teapot using full per pixel ambient/diffuse/specular lighting. The current code includes only diffuse lighting.
+
+light basics:
+Ambient light represents light which bounces around and is always there.
+Diffuse uses directional light to describe which parts of the model should be brighter and which points should be darker.
+Finally, specular light effects the shininess of the model. 
+
+dot of 2 normalized vectors makes a cos
+
+to debug, put the breakpoint at the exit code in scene diffuse
+
