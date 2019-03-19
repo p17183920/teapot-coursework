@@ -22,3 +22,5 @@ dot of 2 normalized vectors makes a cos
 
 to debug, put the breakpoint at the exit code in scene diffuse
 
+
+https://github.com/p17183920/teapot-coursework
