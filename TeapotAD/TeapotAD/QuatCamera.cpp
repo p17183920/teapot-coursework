@@ -103,12 +103,12 @@ void QuatCamera::setNearAndFarPlanes(float nearPlane, float farPlane)
 	_nearPlane = nearPlane;
 	_farPlane = farPlane;
 }
-
+/*
 glm::quat imat2908::QuatCamera::AA2Q(glm::vec3 axis, float theta)
 {
 	return glm::quat();
 }
-
+*/
 ///////////////////////////////////////////////////////////////////////////////////////////
 // Generate a quaternion from axis and rotation angle in radians
 //This is to construct the rotation quaternion
@@ -121,7 +121,7 @@ glm::quat fromAxisAngle(glm::vec3 axis, float angle)  /*TODO:: Complete this fun
 	rotation.w = cos(angle / 2);
 	rotation.x = sin(angle / 2) * axis.x;
 	rotation.y = sin(angle / 2) * axis.y;
-	rotation.w = sin(angle / 2) * axis.z;
+	rotation.z = sin(angle / 2) * axis.z;
 	return rotation;
 
 }

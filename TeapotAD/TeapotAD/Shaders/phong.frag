@@ -30,23 +30,22 @@ struct MaterialInfo{
 vec3 Ka;       //ambient reflectivity
 vec3 Kd; //diffuse reflectivity
 vec3 Ks;      //specular reflectivity
-float shininess;      //shininess of the material
 };
 
 //play with attenuation/shininess factor present the results
-//finish attenuation in phong function using the formula from lecture 7
-//find out about shininess
+
 
 vec3 phongADS()
 {
+     float shininess = 4.f;      //shininess of the material    
      vec3 L = normalize(lightPos - vertPos);   //normalised light vector
      vec3 viewDirNormal = normalize(CameraPos - vertPos);
      vec3 reflectDirNormal = reflect(-L, N);
-     float cosPangle = pow(max(dot(viewDirNormal, reflectDirNormal), 0.0), 4.0);
+     float cosPangle = pow(max(dot(viewDirNormal, reflectDirNormal), 0.0), shininess); 
 	 float distance = length(lightPos - vertPos); 
-	 float attenuationConstant = 1.f;
-	 float attenuationLinear = 1.f;
-	 float attenuationQuadratic = 1.f;
+	 float attenuationConstant = 0.01f;
+	 float attenuationLinear = 0.01f;
+	 float attenuationQuadratic = 0.01f;
 	 
 
 	 float attenuation = 1/(attenuationConstant + (attenuationLinear * distance) + (attenuationQuadratic * distance * distance));
@@ -55,7 +54,7 @@ vec3 phongADS()
      vec3 diffuse = Material.Kd * Ld * max(dot(N,L), 0.0);   
      vec3 specular = Material.Ks * Ls * cosPangle ;   
 	 
-     return clamp(ambient + attenuation*(diffuse + specular), 0.0, 1.0); //replace 0.82 with attenuation
+     return clamp(ambient + attenuation*(diffuse + specular), 0.0, 1.0); 
 }
 
 void main() {
