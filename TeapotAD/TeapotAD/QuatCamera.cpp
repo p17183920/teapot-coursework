@@ -123,7 +123,7 @@ glm::quat fromAxisAngle(glm::vec3 axis, float angle)  /*TODO:: Complete this fun
 	rotation.y = sin(angle / 2) * axis.y;
 	rotation.z = sin(angle / 2) * axis.z;
 	return rotation;
-	//hello
+	
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////
